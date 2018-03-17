@@ -82,3 +82,9 @@ Fastest is map#Set
 
 1. Prefer Map over Object unless you are doing almost no reads and all writes.
 2. Prefer Set over Array unless you are doing almost all pushing and no modification.
+
+## Did I miss something?
+
+The point of this is to learn. If I've missed something (perhaps a faster way to do one of these actions) then please submit a pull request or open an issue.
+
+Thanks for reading!
