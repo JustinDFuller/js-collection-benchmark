@@ -4,12 +4,7 @@ const Benchmark = require('benchmark');
 const suite = new Benchmark.Suite;
 
 suite.add('simpleSet#Object', () => {
-  const map = {}; // maps can have object keys
-  let result;
-
-  for (let i = 0; i < 100000; i++) {
-    map[i] = i;
-  }
+  const map = {};
 
   for (let i = 0; i < 100000; i++) {
     result = map[i];
@@ -17,15 +12,10 @@ suite.add('simpleSet#Object', () => {
 });
 
 suite.add('simpleSet#Map', () => {
-  const map = new Map(); // maps can have object keys
-  let result;
+  const map = new Map();
 
   for (let i = 0; i < 100000; i++) {
     map.set(i, i);
-  }
-
-  for (let i = 0; i < 100000; i++) {
-    result = map.get(i);
   }
 });
 
