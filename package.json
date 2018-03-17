@@ -1,0 +1,28 @@
+{
+  "name": "@justindfuller/js-collection-benchmark",
+  "version": "1.0.0",
+  "description": "Benchmarking js collections",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinDFuller/js-collection-benchmark.git"
+  },
+  "keywords": [
+    "js",
+    "collections",
+    "benchmark",
+    "performance"
+  ],
+  "author": "Justin Fuller <justindanielfuller@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinDFuller/js-collection-benchmark/issues"
+  },
+  "homepage": "https://github.com/JustinDFuller/js-collection-benchmark#readme",
+  "dependencies": {
+    "benchmark": "^2.1.4"
+  }
+}
