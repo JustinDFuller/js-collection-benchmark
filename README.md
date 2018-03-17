@@ -5,7 +5,7 @@ Benchmarking various JS collections.
 
 ### Object vs. Map
 
-* Maps are faster for deleting. 33.5k times faster.
+* Maps are faster for deleting. 23.5 times faster.
 * Maps are faster for iteration. 10 times faster.
 
 * Clearing a map is slower than deleting all keys manually. 7.5 times slower.
@@ -13,9 +13,10 @@ Benchmarking various JS collections.
 * Objects are faster for insertion. 7 times faster.
 
 ```shell
-delete#Object x 1,335 ops/sec ±0.71% (65 runs sampled)
-delete#Map.delete x 44,745,622 ops/sec ±0.62% (85 runs sampled)
-delete#Map.clear x 5,853,214 ops/sec ±1.57% (85 runs sampled)
+delete#Object x 1,342 ops/sec ±0.93% (84 runs sampled)
+delete#Object->undefined x 1,901,625 ops/sec ±0.53% (95 runs sampled)
+delete#Map.delete x 45,024,514 ops/sec ±0.60% (90 runs sampled)
+delete#Map.clear x 6,328,931 ops/sec ±1.13% (92 runs sampled)
 Fastest is delete#Map.delete
 ```
 
@@ -42,9 +43,9 @@ Fastest is knownProperties#Object
 ### Array vs. Set
 
 * Checking existence is faster in a set. 10.1k times faster.
-* Deleting is faster in a set. 214.6k times faster.
+* Deleting is faster in a set. 1.5k times faster.
 
-* Adding a value is faster in an array. 5x faster.
+* Adding a value is faster in an array. 5 times faster.
 
 * Iteration is close to the same in both but Mapping is faster for Sets. 2.5 times faster.
 
@@ -61,9 +62,10 @@ Fastest is simplePush#Array
 ```
 
 ```shell
-deletion#Array x 313 ops/sec ±0.52% (87 runs sampled)
-deletion#Set x 67,193,777 ops/sec ±0.59% (91 runs sampled)
-Fastest is deletion#Set
+deleting#Array.filter x 306 ops/sec ±1.14% (81 runs sampled)
+deleting#Array.indexOf/splice x 12,342 ops/sec ±7.17% (39 runs sampled)
+deleting#Set x 17,596,124 ops/sec ±1.29% (91 runs sampled)
+Fastest is deleting#Set
 ```
 
 ```shell

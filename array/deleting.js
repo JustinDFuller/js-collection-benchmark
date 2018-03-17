@@ -11,12 +11,19 @@ for (let i = 0; i < 100000; i++) {
   set.add(i);  
 }
 
-suite.add('deleting#Array', () => {
-  array.filter(i => i !== 100000 - 1);
+let toDelete = 99999;
+
+suite.add('deleting#Array.filter', () => {
+  array.filter(i => i !== toDelete--);
+});
+
+suite.add('deleting#Array.indexOf/splice', () => {
+  const index = array.indexOf(toDelete--);
+  array.splice(index, 1);
 });
 
 suite.add('deleting#Set', () => {
-  set.delete(100000 - 1);
+  set.delete(toDelete--);
 });
 
 suite.on('complete', require('../print'))
