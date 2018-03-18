@@ -10,7 +10,7 @@ Benchmarking various JS collections.
 
 * Clearing a map is slower than deleting all keys manually. 7.5 times slower.
 
-* Objects are faster for insertion. 7 times faster.
+* Objects are faster for inserting numbers but not for inserting strings.
 
 [Deleting all properties of the collection:](./object/delete.js)
 ```shell
@@ -32,9 +32,12 @@ Fastest is iteration#Map
 
 [Setting 100k randomish properties on the collection:](./object/simple-set.js)
 ```shell
-simpleSet#Object x 1,347 ops/sec ±0.32% (93 runs sampled)
-simpleSet#Map x 101 ops/sec ±1.57% (69 runs sampled)
-Fastest is simpleSet#Object
+simpleSet#Object->number x 379 ops/sec ±1.00% (84 runs sampled)
+simpleSet#Map->number x 111 ops/sec ±1.72% (67 runs sampled)
+simpleSet#Map->number.toString x 50.56 ops/sec ±1.42% (56 runs sampled)
+simpleSet#Object->string x 12.45 ops/sec ±4.67% (35 runs sampled)
+simpleSet#Map->string x 21.41 ops/sec ±5.66% (39 runs sampled)
+Fastest is simpleSet#Object->number
 ```
 
 [Setting consistent/predefined properties on the collection 100k times:](./object/known-properties.js)
@@ -45,6 +48,8 @@ Fastest is knownProperties#Object
 ```
 
 ### Array vs. Set
+
+IMPORTANT NOTE: Because a Set is specifically for when you need unique values in the collection I will assume that in all use cases and conclusions.
 
 * Checking existence is faster in a set. 10.1k times faster.
 * Deleting is faster in a set. 1.5k times faster.

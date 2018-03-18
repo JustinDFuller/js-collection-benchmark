@@ -20,7 +20,7 @@ suite.add('delete#Object', () => {
     delete object[key];
   });
 });
-
+ 
 suite.add('delete#Object json stringify/parse after loop.', () => {
   Object.keys(objectUndefined).forEach(key => {
     objectUndefined[key] = undefined;
