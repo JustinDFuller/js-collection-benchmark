@@ -6,12 +6,12 @@ const suite = new Benchmark.Suite;
 const array = [];
 const set = new Set();
 
-for (let i = 0; i < 100000; i++) {
+for (let i = 0; i < 1000; i++) {
   array.push(i);
   set.add(i);  
 }
 
-let toDelete = 99999;
+let toDelete = 999;
 
 suite.add('deleting#Array.filter', () => {
   array.filter(i => i !== toDelete--);

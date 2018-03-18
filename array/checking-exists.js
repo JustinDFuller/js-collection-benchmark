@@ -6,17 +6,17 @@ const suite = new Benchmark.Suite;
 const array = [];
 const set = new Set();
 
-for (let i = 0; i < 100000; i++) {
+for (let i = 0; i < 10; i++) {
   array.push(i);
   set.add(i);  
 }
 
 suite.add('checkingExists#Array', () => {
-  array.includes(100000 - 1);
+  array.includes(10 - 1);
 });
 
 suite.add('checkingExists#Set', () => {
-  set.has(100000 - 1);
+  set.has(10 - 1);
 });
 
 suite.on('complete', require('../print'))

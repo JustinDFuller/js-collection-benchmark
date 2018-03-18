@@ -8,7 +8,7 @@ let objectUndefined = {};
 const map = new Map();
 const clearMap = new Map();
 
-for (let i = 0; i < 100000; i++) {
+for (let i = 0; i < 10; i++) {
   object[i] = i;
   objectUndefined[i] = i;
   map.set(i, i)

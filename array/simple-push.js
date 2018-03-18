@@ -2,21 +2,15 @@ const assert = require('assert');
 const Benchmark = require('benchmark');
 
 const suite = new Benchmark.Suite;
+const array = [];
+const set = new Set();
 
 suite.add('simplePush#Array', () => {
-  const collection = [];
-
-  for (let i = 0; i < 100000; i++) {
-    collection.push(i);
-  }
+  array.push('test' + Math.random());
 });
 
 suite.add('simplePush#Set', () => {
-  const collection = new Set();
-
-  for (let i = 0; i < 100000; i++) {
-    collection.add(i);
-  }
+  set.add('test' + Math.random());
 });
 
 suite.on('complete', require('../print'))
