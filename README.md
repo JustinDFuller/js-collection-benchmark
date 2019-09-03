@@ -1,4 +1,7 @@
 # js-collection-benchmark
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/JustinDFuller/js-collection-benchmark.svg)](https://greenkeeper.io/)
+
 Benchmarking various JS collections.
 
 ## Node 9.8.0 Results
